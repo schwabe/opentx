@@ -1,4 +1,4 @@
-﻿##OpenTX 2.2 Branch
+﻿## OpenTX 2.2 Branch
 
 [![Build Status](https://travis-ci.org/opentx/opentx.svg?branch=next)](https://travis-ci.org/opentx/opentx)
 [![Join the chat at https://opentx.rocket.chat](https://camo.githubusercontent.com/3d659054abd6ce21c0e47cf3b83a51bda69ca282/68747470733a2f2f64656d6f2e726f636b65742e636861742f696d616765732f6a6f696e2d636861742e737667)](https://opentx.rocket.chat)
