@@ -141,7 +141,11 @@ void per10ms()
   if (IS_ROTARY_ENCODER_NAVIGATION_ENABLE()) {
     static rotenc_t rePreviousValue;
     static bool cw = false;
-    rotenc_t reNewValue = (ROTARY_ENCODER_NAVIGATION_VALUE / ROTARY_ENCODER_GRANULARITY);
+#ifdef KEY_EMULATED_ROTENCODER
+    rotenc_t reNewValue = (ROTARY_ENCODER_NAVIGATION_VALUE);
+#else
+		rotenc_t reNewValue = (ROTARY_ENCODER_NAVIGATION_VALUE / ROTARY_ENCODER_GRANULARITY);
+#endif
     rotenc_t scrollRE = reNewValue - rePreviousValue;
     if (scrollRE) {
       static uint32_t lastEvent;
@@ -286,7 +290,7 @@ void generalDefault()
     g_eeGeneral.vBatMax = BATTERY_MAX - 120;
 
 #if defined(DEFAULT_MODE)
-  g_eeGeneral.stickMode = DEFAULT_MODE-1;
+  g_eeGeneral.stickMode = DEFAULT_MODE-2;
 #endif
 
 #if defined(PCBTARANIS)
